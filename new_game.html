@@ -1,0 +1,69 @@
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        canvas {
+            border: 1px solid #d3d3d3;
+            background-color: #d3d3d3;
+        }
+    </style>
+
+</head>
+
+<body onload="myGameArea.start()">
+    <div>
+        <script src="sketch.js"></script>
+    </div>
+    <div>
+        <button id="StartGame" onclick="startGame()">Start Simulation</button>
+        <button id="StopGame" onclick="stopGame()">Stop Simulation</button>
+    </div>
+
+    <div class="slidecontainer">
+        <p>Set number of people:</p>
+        <input type="range" min="1" max="2000" value="1000" , id="numberOfPeople">
+        <p>Population: <span id="People"></span></p>
+
+        <p>Set number of infection probability:</p>
+        <input type="range" min="1" max="100" value="2" , id="infectionProbability">
+        <p>Probability: <span id="Probability"></span></p>
+    </div>
+
+    <div>
+        <p>Stats</p>
+        <p id="Susceptible"></p>
+        <p id="infections"></p>
+        <p id="recoved"></p>
+    </div>
+
+    <script>
+
+        var slider1 = document.getElementById("numberOfPeople");
+        var output1 = document.getElementById("People");
+        output1.innerHTML = slider1.value;
+
+        slider1.oninput = function () {
+            output1.innerHTML = this.value;
+        }
+
+        var slider2 = document.getElementById("infectionProbability");
+        var output2 = document.getElementById("Probability");
+        output2.innerHTML = slider2.value;
+
+        slider2.oninput = function () {
+            output2.innerHTML = this.value;
+        }
+        window.numPeople = output1.innerHTML
+        window.infectionProbability = slider2.value;
+
+
+
+    </script>
+
+</body>
+
+
+
+</html>
