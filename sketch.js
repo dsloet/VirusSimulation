@@ -4,8 +4,8 @@ let canvasHeight = 270;
 let diameter = 1;
 let peopleSize = 4;
 let crowd = [];
-// 0.2;
 let recovery = 200;
+
 // counters
 let startTime = 0; // this is the start of the counter
 let countTime = [];
